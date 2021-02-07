@@ -1,0 +1,25 @@
+{
+  "name": "console-mock",
+  "version": "1.0.0",
+  "description": "Console and outputs mocking library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register 'test/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryzcy/console-mock.git"
+  },
+  "keywords": [
+    "console-mock",
+    "test",
+    "testing",
+    "assertion"
+  ],
+  "author": "Chongyi Zheng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harryzcy/console-mock/issues"
+  },
+  "homepage": "https://github.com/harryzcy/console-mock#readme"
+}
