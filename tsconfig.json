@@ -4,9 +4,6 @@
     "allowUnusedLabels": false,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "es2018"
-    ],
     "module": "commonjs",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -14,7 +11,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2018",
+    "target": "es2015",
     "rootDir": "src",
     "outDir": "bin"
   },
