@@ -2,7 +2,7 @@
   "name": "console-mute",
   "version": "1.0.0",
   "description": "Console and outputs mocking library",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
     "build": "tsc",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
