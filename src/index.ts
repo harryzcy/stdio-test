@@ -1,4 +1,18 @@
-class Stream {
+/**
+ * defines an output stream
+ */
+interface Stream {
+    calledTimes: number;
+    buffers: Array<string>;
+    lines: Array<string>;
+
+    push(buffer: string): number;
+}
+
+/** 
+ * Implements Stream for console methods
+ */
+class ConsoleStream implements Stream {
     #calledNum: number;
     #buffers: Array<string>;
 
@@ -7,20 +21,45 @@ class Stream {
         this.#buffers = [];
     }
 
+    get calledTimes(): number {
+        return this.#calledNum;
+    }
+
+    get buffers(): Array<string> {
+        return this.#buffers;
+    }
+
+    get lines(): Array<string> {
+        return this.buffers;
+    }
+
     push(buffer: string): number {
         this.#calledNum++;
         return this.#buffers.push(buffer);
     }
+}
 
-    calledTimes(): number {
+/** 
+ * Implements Stream for stdout and stderr
+ */
+class StdStream implements Stream {
+    #calledNum: number;
+    #buffers: Array<string>;
+
+    constructor() {
+        this.#calledNum = 0;
+        this.#buffers = [];
+    }
+
+    get calledTimes(): number {
         return this.#calledNum;
     }
 
-    buffers(): Array<string> {
+    get buffers(): Array<string> {
         return this.#buffers;
     }
 
-    lines(): Array<string> {
+    get lines(): Array<string> {
         if (this.#buffers.length == 0) {
             // return empty array
             return new Array<string>();
@@ -31,10 +70,36 @@ class Stream {
         }
         return str.split("\n");
     }
+
+    push(buffer: string): number {
+        this.#calledNum++;
+        return this.#buffers.push(buffer);
+    }
 }
 
-function withStdoutWrite(fn: () => void): Stream {
-    const s = new Stream();
+/**
+ * Mock console.log method
+ * @param fn function to be wrapped
+ */
+function withConsoleLog(fn: () => void): ConsoleStream {
+    const s = new ConsoleStream();
+    const originalWrite = console.log;
+    console.log = (buffer: string) => {
+        s.push(buffer);
+    };
+
+    fn();
+
+    console.log = originalWrite;
+    return s;
+}
+
+/**
+ * Mock stdout.write method 
+ * @param fn function to be wrapped
+ */
+function withStdoutWrite(fn: () => void): StdStream {
+    const s = new StdStream();
     const originalWrite = process.stdout.write;
     process.stdout.write = (buffer: string) => {
         s.push(buffer);
@@ -42,9 +107,9 @@ function withStdoutWrite(fn: () => void): Stream {
     };
 
     fn();
-    
+
     process.stdout.write = originalWrite;
     return s;
 }
 
-export { Stream, withStdoutWrite };
+export { Stream, ConsoleStream, StdStream, withConsoleLog, withStdoutWrite };
