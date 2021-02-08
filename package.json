@@ -1,5 +1,5 @@
 {
-  "name": "console-mock",
+  "name": "console-mute",
   "version": "1.0.0",
   "description": "Console and outputs mocking library",
   "main": "index.js",
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harryzcy/console-mock.git"
+    "url": "git+https://github.com/harryzcy/console-mute.git"
   },
   "keywords": [
-    "console-mock",
+    "console-mute",
     "test",
     "testing",
     "assertion"
@@ -22,9 +22,9 @@
   "author": "Chongyi Zheng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/harryzcy/console-mock/issues"
+    "url": "https://github.com/harryzcy/console-mute/issues"
   },
-  "homepage": "https://github.com/harryzcy/console-mock#readme",
+  "homepage": "https://github.com/harryzcy/console-mute#readme",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.14",
