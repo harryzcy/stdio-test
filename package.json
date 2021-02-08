@@ -1,5 +1,5 @@
 {
-  "name": "console-mute",
+  "name": "stdio-test",
   "version": "1.0.0",
   "description": "Console and outputs mocking library",
   "main": "bin/index.js",
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harryzcy/console-mute.git"
+    "url": "git+https://github.com/harryzcy/stdio-test.git"
   },
   "keywords": [
-    "console-mute",
+    "stdio-test",
     "test",
     "testing",
     "assertion"
@@ -22,9 +22,9 @@
   "author": "Chongyi Zheng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/harryzcy/console-mute/issues"
+    "url": "https://github.com/harryzcy/stdio-test/issues"
   },
-  "homepage": "https://github.com/harryzcy/console-mute#readme",
+  "homepage": "https://github.com/harryzcy/stdio-test#readme",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.14",

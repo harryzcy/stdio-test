@@ -1,18 +1,18 @@
-# Console Mute
+# Standard IO Test
 
-A Node.js library that mocks console and stdout.
+A Node.js library that mocks console and stdout for testing.
 
 ## Get Started
 
 ```
-npm install --save-dev console-mute
+npm install --save-dev stdio-test
 ```
 
 ## Example Usage
 
 Mock `console.log`
 ```javascript
-const withConsoleLog = require("console-mute").withConsoleLog;
+const withConsoleLog = require("stdio-test").withConsoleLog;
 const stream = withConsoleLog(() => {
     process.stdout.write("some data");
 });
@@ -22,7 +22,7 @@ const stream = withConsoleLog(() => {
 Mock `process.stdout.write`
 
 ```javascript
-const withStdoutWrite = require("console-mute").withStdoutWrite;
+const withStdoutWrite = require("stdio-test").withStdoutWrite;
 const stream = withStdoutWrite(() => {
     process.stdout.write("some data");
 });
