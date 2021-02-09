@@ -1,5 +1,5 @@
 # build artefacts
-dist/*
+bin/*
 coverage/*
 # data definition files
 **/*.d.ts
